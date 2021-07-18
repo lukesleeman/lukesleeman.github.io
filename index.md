@@ -16,6 +16,6 @@ Overuses the ❤️ emoji
 
 🧑‍💻 [Github](https://github.com/lukesleeman) - Unfortunately most of my work these days is private.  But feel free to dig through the ruins of projects long past.
 
-🔗 [Linkedin](www.linkedin.com/in/luke-sleeman-b2b51060) - Don't really use it.
+🔗 [Linkedin](https://www.linkedin.com/in/luke-sleeman-b2b51060) - Don't really use it.
 
 💼 [Itty Bitty Apps](https://www.ittybittyapps.com/) - Where I work.
