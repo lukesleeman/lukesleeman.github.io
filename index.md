@@ -1,6 +1,6 @@
 ![Profile picture](profile-round.png)
 
-I'm a Principal Developer at Itty Bitty Apps specialising in Android app development.  I'm passionate about building inclusive, diverse and high performing teams.  Great things happen when you empower developers to be their very best.
+👋 Hey!  I'm a Principal Developer at Itty Bitty Apps specialising in Android app development.  I'm passionate about building inclusive, diverse and high performing teams.  Great things happen when you empower developers to be their very best.
 
 I also speak on Android related subjects, both at developer meetups in Australia and internationally, as well as at various conferences.
 
