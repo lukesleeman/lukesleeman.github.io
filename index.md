@@ -1,6 +1,6 @@
 # Luke Sleeman
 
-## 👋 Hello there
+# 👋 Hello there
 
 ![Profile picture](profile-round.png)
 
