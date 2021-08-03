@@ -3,4 +3,4 @@ theme: jekyll-theme-slate
 title: "Luke Sleeman"
 description: "Principal Developer.  Passionate about building inclusive & diverse teams"
 
-show_downloads: false
+show_downloads: "false"
