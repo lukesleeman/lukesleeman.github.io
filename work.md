@@ -10,7 +10,7 @@ sidebar_link: true
 
 **Principal Android Engineer** at Mantel Group (2017-Present)
 
-Leading client engagements and representing our brand internationally. Responsible for delivering innovative apps in complex, risk-averse environments while building and mentoring high-performing teams.
+Leading client engagements and representing our brand in Australia & NZ. Responsible for delivering innovative apps in complex, risk-averse environments while building and mentoring high-performing teams.
 
 ## Key Achievement: ANZ Plus
 
@@ -22,7 +22,7 @@ ANZ Plus is the fastest-growing new digital bank in Australia, with $14 billion 
 
 - **Foundation Building**: Created the foundational Android architecture, establishing core components of the codebase that other developers built upon
 - **Scaling**: Grew the Android team from 2 to over 80 developers, evolving the engineering culture and workflows
-- **Project Leadership**: Guided the team through all project phases, from inception to public release, and introduced significant new features like home loans
+- **Project Leadership**: Helped guide the Android team through all project phases, from inception to public release, and as we developed significant new features like home loans
 - **Ways of Working**: Redesigned team operating models and workflows to overcome scaling bottlenecks
 - **Tech Transformation**: Led a multi-year effort to migrate the codebase to Jetpack Compose, resulting in a complete UI overhaul
 - **Modularisation Initiative**: Initiated the modularisation effort, breaking up the monolithic codebase into smaller modules to enhance developer autonomy and alignment
