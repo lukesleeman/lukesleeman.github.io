@@ -1,6 +1,15 @@
-theme: jekyll-theme-slate
+remote_theme: fongandrew/hydeout
 
 title: "Luke Sleeman"
-description: "Principal Android Developer.  Passionate about building diverse & inclusive teams"
+description: "Principal Android Engineer & Team Leader"
 
-show_downloads: false
+paginate: 10
+paginate_path: "/posts/page:num/"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation
+sidebar_home_link: true
