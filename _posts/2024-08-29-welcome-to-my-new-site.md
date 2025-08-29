@@ -6,8 +6,6 @@ categories: [personal, ai]
 excerpt: "I'm testing agentic AI by creating 10 things in 10 days. First up: rebuilding my personal site with AI assistance."
 ---
 
-# New Site, New Experiment
-
 I'm doing a "create 10 things in 10 days" experiment to test out agentic AI tools. This personal website rebuild is day 1.
 
 ## The Process

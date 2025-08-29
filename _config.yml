@@ -13,3 +13,6 @@ plugins:
 
 # Navigation
 sidebar_home_link: true
+
+# Disable comments
+disqus: false
