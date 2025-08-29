@@ -32,7 +32,8 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         IMAGE_DIR=$(node -e "console.log(require('./.github/scripts/config').IMAGE_SETTINGS.directory)")
-        git add _posts/ "$IMAGE_DIR/"
+        git add _posts/
+        [ -d "$IMAGE_DIR/" ] && git add "$IMAGE_DIR/"
         if git diff --staged --quiet; then
           echo "No new posts to commit"
         else
