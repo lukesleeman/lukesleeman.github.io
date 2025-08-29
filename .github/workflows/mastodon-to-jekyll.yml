@@ -1,0 +1,41 @@
+name: Mastodon to Jekyll
+
+on:
+  schedule:
+    # Run every 2 hours
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  sync-mastodon:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install jsdom
+        
+    - name: Run Mastodon sync script
+      run: node .github/scripts/sync-mastodon.js
+      
+    - name: Commit and push if changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        IMAGE_DIR=$(node -e "console.log(require('./.github/scripts/config').IMAGE_SETTINGS.directory)")
+        git add _posts/ "$IMAGE_DIR/"
+        if git diff --staged --quiet; then
+          echo "No new posts to commit"
+        else
+          git commit -m "Add new Mastodon posts and images [automated]"
+          git push
+        fi
