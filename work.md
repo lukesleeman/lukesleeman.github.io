@@ -24,7 +24,7 @@ ANZ Plus is the fastest-growing new digital bank in Australia, with $14 billion 
 - **Scaling**: Grew the Android team from 2 to over 80 developers, evolving the engineering culture and workflows
 - **Project Leadership**: Helped guide the Android team through all project phases, from inception to public release, and as we developed significant new features like home loans
 - **Ways of Working**: Redesigned team operating models and workflows to overcome scaling bottlenecks
-- **Tech Transformation**: Led a multi-year effort to migrate the codebase to Jetpack Compose, resulting in a complete UI overhaul
+- **Tech Transformation**: Setup a multi-year effort to migrate the codebase to Jetpack Compose, resulting in a complete UI overhaul
 - **Modularisation Initiative**: Initiated the modularisation effort, breaking up the monolithic codebase into smaller modules to enhance developer autonomy and alignment
 
 ## Speaking & Community
@@ -52,7 +52,7 @@ ANZ Plus is the fastest-growing new digital bank in Australia, with $14 billion 
 
 **Lead Organiser, GDG Melbourne** (2016-2021)
 
-Led the Melbourne Google Developer Group for several years, helping grow both the community and our capacity to organise events. Responsibilities included running events, attracting speakers, finding sponsors, and liaising with a wide range of organisations. Successfully organised several DevFest conferences attracting international speakers and hundreds of attendees.
+Led the Melbourne Google Developer Group for several years, helping grow both the community and our capacity to organise events. Responsibilities included running events, attracting speakers, finding sponsors, and liaising with a wide range of organisations. During this time GDG Melbourne successfully organised several DevFest conferences attracting international speakers and hundreds of attendees.
 
 ## Core Skills
 
@@ -82,4 +82,4 @@ Started as part of university Industry Based Learning and grew to lead the devel
 
 ---
 
-*Want to know more? [Download my full resume (PDF)](/assets/resume-luke-sleeman-2024.pdf) or [get in touch](mailto:luke.sleeman@gmail.com).*
+*Want to know more? [Download my full resume (PDF)](/assets/Resume - Short.pdf) or [get in touch](mailto:luke.sleeman@gmail.com).*

@@ -6,7 +6,7 @@ sidebar_link: true
 
 # About Me
 
-![Profile picture](profile-round.png)
+![Profile picture](assets/profile-round.png)
 
 I'm Luke Sleeman, a Principal Android Engineer with a passion for building diverse, inclusive, and high-performing teams. I believe great things happen when you empower developers to be their very best.
 
@@ -26,7 +26,7 @@ When I'm not building apps or leading teams, you'll find me:
 - **Camping** - Getting away from screens and into nature
 - **Parenting** - Raising my two awesome kids
 
-I speak a bit of Mandarin, have an inexplicable love for [cakes shaped like animals of the Chinese zodiac](pig-cake.jpg), and am always up for a good cup of tea.
+I speak a bit of Mandarin, have an inexplicable love for [cakes shaped like animals of the Chinese zodiac](assets/pig-cake.jpg), and am always up for a good cup of tea.
 
 ## Community & Leadership Philosophy
 
