@@ -1,5 +1,41 @@
 ---
-layout: index
+layout: page
 title: Posts
 sidebar_link: true
 ---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
+        {{ post.date | date: "%B %d, %Y" }}
+      </time>
+      
+      {% if post.categories.size > 0 %}
+        <div class="post-categories">
+          {% for category in post.categories %}
+            <span class="category">{{ category }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% if post.excerpt %}
+        <div class="post-excerpt">
+          {{ post.excerpt }}
+        </div>
+      {% endif %}
+      
+      <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+    </article>
+  {% endfor %}
+</div>
+
+{% if site.posts.size == 0 %}
+  <p>No posts yet. Check back soon!</p>
+{% endif %}
