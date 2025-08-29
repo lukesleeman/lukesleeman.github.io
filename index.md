@@ -33,7 +33,7 @@ I'm a Principal Android Engineer at Mantel Group, passionate about building dive
 
 ## Connect
 
-🐥 [Mastodon](https://aus.social/@lukesleeman) - Android dev, what I'm eating for lunch, and other random things.
+🐘 [Mastodon](https://aus.social/@lukesleeman) - Android dev, what I'm eating for lunch, and other random things.
 
 🎥 [Youtube](https://www.youtube.com/channel/UCyP8OUdghOYrKz2jRok_Dxw) - Videos of my various conference presentations.
 
