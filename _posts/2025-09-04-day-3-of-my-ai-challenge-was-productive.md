@@ -33,7 +33,10 @@ The code is at [github.com/lukesleeman/revspor](https://github.com/lukesleeman/r
 - I'm not sure the Opus 4.1 model actually gives better results. Its smarter - but that sometimes leads it towards choosing solutions that are too smart for their own good! In coding, a simpler approach of breaking things down into basic steps often gives better results.
 - This feels a lot like helping guide a junior dev. Being able to provide good reviews of the code, and guide the tool in better directions are critical skills.
 
-![A gif showing my bookmarklet in action](/assets/images/mastodon/2025-09-04-day-3-of-my-ai-challenge-was-productive-1.mp4)
+<video controls loop muted style="max-width: 100%; height: auto;">
+  <source src="/assets/images/mastodon/2025-09-04-day-3-of-my-ai-challenge-was-productive-1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 
