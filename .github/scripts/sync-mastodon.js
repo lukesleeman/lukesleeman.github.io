@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./config');
 const url = require('url');
+const { generateTitle, generateSlug } = require('./title-generator');
 
 // Function to fetch RSS feed
 function fetchRSS(url) {
@@ -145,8 +146,8 @@ function parseRSS(xmlString) {
         continue;
       }
       
-      // Generate title from description if not present
-      const finalTitle = title || description.replace(/<[^>]*>/g, '').substring(0, 100).trim();
+      // Generate enhanced title from description using the title generator
+      const finalTitle = title || generateTitle(description);
       
       // Add all posts from RSS feed (RSS already filters to original posts only)
       items.push({ title: finalTitle, description, pubDate, link, media });
@@ -162,13 +163,8 @@ async function createJekyllPost(item, dryRun = false) {
   const dateStr = date.toISOString().split('T')[0];
   const timeStr = date.toTimeString().split(' ')[0];
   
-  // Create a slug from the title (first 50 chars, cleaned)
-  const slug = item.title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .substring(0, 50)
-    .replace(/-+$/, '');
+  // Create a slug from the title using the enhanced slug generator
+  const slug = generateSlug(item.title);
   
   const filename = `_posts/${dateStr}-${slug}.md`;
   

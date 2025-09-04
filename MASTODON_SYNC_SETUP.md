@@ -24,7 +24,7 @@ The system automatically filters out posts before a "go live date"
 Each Mastodon post becomes a Jekyll post with:
 - **Layout**: `post`
 - **Categories**: `[mastodon, microblog]`
-- **Title**: First 50 characters of your toot (cleaned for filename)
+- **Title**: Intelligently generated from post content using enhanced title generation
 - **Date**: Original post date from Mastodon
 - **Content**: Full toot content plus link back to original
 - **Front matter**: Includes `mastodon_url` for reference
@@ -66,3 +66,20 @@ module.exports = {
 ```
 
 The `cron` schedule can be edited in the workflow file
+
+## Title Generation
+
+The system uses intelligent title generation (`.github/scripts/title-generator.js`) that creates readable, descriptive titles from your Mastodon posts instead of simple truncation.
+
+### Title Generation Strategies
+- **Natural sentences**: Uses complete first sentences when they're a good length (15-80 chars)
+- **Pattern recognition**: Recognises common patterns like "Day X of...", "I'm doing...", questions, etc.
+- **HTML entity decoding**: Properly converts `&#39;` to `'`, `&quot;` to `"`, etc.
+- **Smart truncation**: Finds natural break points at commas, conjunctions, or word boundaries
+- **Fallback handling**: Uses meaningful text chunks when other strategies don't work
+
+### Examples
+- `"I&#39;m challenging myself to build 10 things in 10 d"` → `"I'm challenging myself to build 10 things in 10 days using agentic AI"`
+- `"Day 2 of &amp;quot;building stuff&amp;quot; with using agentic"` → `"Day 2 of "building stuff" with using agentic AI"`
+
+You can test title generation with: `node .github/scripts/test-title-generator.js`
