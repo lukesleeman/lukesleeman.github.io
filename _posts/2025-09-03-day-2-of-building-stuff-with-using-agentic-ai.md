@@ -11,7 +11,7 @@ Day 2 of "building stuff" with using agentic AI! I built a bookmarklet to automa
 
 The website we use for registering crews is good ... but it has no "bulk entry", which means adding a crew of 26 paddlers involves **a lot** of clicking, typing and cross checking spreadsheets to ensure there are no errors.
 
-The code is at [github.com/lukesleeman/revspor](https://github.com/lukesleeman/revsport-crew-entry-bookmarklet)
+The code is at [github.com/lukesleeman/revsport-crew-entry-bookmarklet](https://github.com/lukesleeman/revsport-crew-entry-bookmarklet)
 
 # Tools I used
 
