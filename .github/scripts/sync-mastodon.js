@@ -4,6 +4,7 @@ const path = require('path');
 const config = require('./config');
 const url = require('url');
 const { generateTitle, generateSlug } = require('./title-generator');
+const { htmlToMarkdown } = require('./html-to-markdown');
 
 // Function to fetch RSS feed
 function fetchRSS(url) {
@@ -207,8 +208,8 @@ async function createJekyllPost(item, dryRun = false) {
     }
   }
   
-  // Build post content
-  let postContent = item.description;
+  // Convert HTML description to Markdown
+  let postContent = htmlToMarkdown(item.description);
   
   // Add images to post content
   if (downloadedImages.length > 0) {
