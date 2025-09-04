@@ -25,10 +25,14 @@ function htmlToMarkdown(html) {
   // Convert line breaks
   markdown = markdown.replace(/<br\s*\/?>/g, '\n');
   
-  // Handle Mastodon's complex link structure with spans first
+  // Handle Mastodon's complex link structure - extract all text content from within the <a> tag
   markdown = markdown.replace(
-    /<a[^>]*href="([^"]*)"[^>]*><span[^>]*>[^<]*<\/span><span[^>]*>([^<]*)<\/span><span[^>]*>[^<]*<\/span><\/a>/g,
-    '[$2]($1)'
+    /<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/g,
+    (match, url, content) => {
+      // Strip all HTML tags from the content and concatenate the text
+      const linkText = content.replace(/<[^>]*>/g, '');
+      return `[${linkText}](${url})`;
+    }
   );
   
   // Handle mention links
