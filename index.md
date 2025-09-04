@@ -16,6 +16,21 @@ I'm a Principal Android Engineer at Mantel Group, passionate about building dive
 
 - Spoke at DevFest Melbourne & Auckland on Zero Tech Debt
 
+{% assign latest_post = site.posts.first %}
+{% if latest_post %}
+## Latest Post
+
+### [{{ latest_post.title }}]({{ latest_post.url }})
+
+{{ latest_post.excerpt | strip_html | truncatewords: 30 }}
+
+[Read more →]({{ latest_post.url }})
+{% else %}
+## Latest Post
+
+*No posts yet - check back soon for updates on Android development, team leadership, and conference experiences.*
+{% endif %}
+
 ## Connect
 
 🐘 [Mastodon](https://aus.social/@lukesleeman) - Android dev, what I'm eating for lunch, and other random things.
