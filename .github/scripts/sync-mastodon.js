@@ -129,10 +129,11 @@ function parseRSS(xmlString) {
       const mediaDescElement = mediaElement.querySelector('media\\:description');
       const altText = mediaDescElement ? getTextContent(mediaDescElement) : '';
       
-      if (mediaUrl && medium === 'image') { // Only handle images for now
+      if (mediaUrl && (medium === 'image' || medium === 'video')) { // Handle both images and videos (including GIFs)
         media.push({
           url: mediaUrl,
           type: mediaType,
+          medium: medium,
           alt: altText
         });
       }
@@ -197,12 +198,14 @@ async function createJekyllPost(item, dryRun = false) {
           await downloadMedia(mediaItem.url, localPath);
           downloadedImages.push({
             path: `${config.IMAGE_SETTINGS.urlPath}/${imageName}`,
-            alt: mediaItem.alt || `Image ${i + 1} from Mastodon post`
+            alt: mediaItem.alt || `${mediaItem.medium === 'video' ? 'Video' : 'Image'} ${i + 1} from Mastodon post`,
+            medium: mediaItem.medium,
+            type: mediaItem.type
           });
           console.log(`Downloaded: ${localPath}`);
         } catch (error) {
-          console.error(`Failed to download image ${mediaItem.url}:`, error.message);
-          // Continue with other images even if one fails
+          console.error(`Failed to download media ${mediaItem.url}:`, error.message);
+          // Continue with other media even if one fails
         }
       }
     }
@@ -211,11 +214,24 @@ async function createJekyllPost(item, dryRun = false) {
   // Convert HTML description to Markdown
   let postContent = htmlToMarkdown(item.description);
   
-  // Add images to post content
+  // Add media to post content
   if (downloadedImages.length > 0) {
     postContent += '\n\n';
-    for (const image of downloadedImages) {
-      postContent += `![${image.alt}](${image.path})\n\n`;
+    for (const media of downloadedImages) {
+      if (media.medium === 'video') {
+        // Use HTML video tag for videos (including GIFs served as MP4)
+        postContent += `<video controls loop muted style="max-width: 100%; height: auto;">
+  <source src="${media.path}" type="${media.type}">
+  Your browser does not support the video tag.
+</video>
+
+`;
+      } else {
+        // Use markdown image syntax for images
+        postContent += `![${media.alt}](${media.path})
+
+`;
+      }
     }
   }
   
