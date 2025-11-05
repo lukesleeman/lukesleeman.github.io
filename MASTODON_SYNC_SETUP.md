@@ -16,8 +16,33 @@ The system automatically filters out posts before a "go live date"
 
 ### Date Filtering
 - **Cutoff Date**: Only processes posts after `2025-08-29T00:00:00Z`
-- **Easy to Change**: Update the `CUTOFF_DATE` variable at the top of the workflow file
+- **Easy to Change**: Update the `CUTOFF_DATE` variable in `.github/scripts/config.js`
 - **Prevents Spam**: Won't import your entire Mastodon history
+
+### Hashtag Filtering
+
+You can configure the sync to only import posts that include a specific hashtag. This is useful if you want to be selective about which posts get synced to your blog.
+
+To enable hashtag filtering, edit `.github/scripts/config.js`:
+
+```javascript
+HASHTAG_FILTER: {
+  // Set to true to only sync posts with a specific hashtag
+  ENABLED: true,  // Change to true to enable filtering
+  // The hashtag to filter by (without the # symbol)
+  // Posts will only be synced if they contain this hashtag
+  TAG: 'microblog'  // Change to your preferred hashtag
+}
+```
+
+**Behavior Options:**
+- `ENABLED: false` - Syncs all posts (default behavior)
+- `ENABLED: true` - Only syncs posts containing the specified hashtag (e.g., `#microblog`)
+
+**Example:**
+- If `TAG: 'microblog'`, only posts containing `#microblog` will be synced
+- Change `TAG` to any hashtag you want (without the `#` symbol)
+- Posts without the hashtag will be skipped and logged
 
 ## What Gets Created
 
@@ -48,20 +73,26 @@ All settings are now in `.github/scripts/config.js` for easy modification:
 module.exports = {
   // Only process posts after this date (set to go-live date)
   CUTOFF_DATE: '2025-08-29T00:00:00Z',  // Change this date
-  
+
   // Mastodon RSS feed URL
   RSS_FEED_URL: 'https://aus.social/@lukesleeman.rss',
-  
+
   // Jekyll post settings
   POST_SETTINGS: {
     layout: 'post',
     categories: ['mastodon', 'microblog'],  // Change categories here
     timezone: '+1000'
   },
-  
+
   // Processing limits
   MAX_POSTS_PER_RUN: 10,  // How many posts to process per run
-  MIN_POST_LENGTH: 10     // Minimum post length to include
+  MIN_POST_LENGTH: 10,    // Minimum post length to include
+
+  // Hashtag filtering settings
+  HASHTAG_FILTER: {
+    ENABLED: false,       // Set to true to enable hashtag filtering
+    TAG: 'microblog'      // The hashtag to filter by (without #)
+  }
 };
 ```
 
