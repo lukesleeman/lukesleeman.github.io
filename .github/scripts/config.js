@@ -23,5 +23,14 @@ module.exports = {
   
   // Processing limits
   MAX_POSTS_PER_RUN: 10,
-  MIN_POST_LENGTH: 10
+  MIN_POST_LENGTH: 10,
+
+  // Hashtag filtering settings
+  HASHTAG_FILTER: {
+    // Set to true to only sync posts with a specific hashtag
+    enabled: false,
+    // The hashtag to filter by (without the # symbol)
+    // Posts will only be synced if they contain this hashtag
+    tag: 'microblog'
+  }
 };

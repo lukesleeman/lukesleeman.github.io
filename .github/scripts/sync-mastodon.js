@@ -141,16 +141,25 @@ function parseRSS(xmlString) {
     
     if (description && pubDate) {
       const postDate = new Date(pubDate);
-      
+
       // Skip posts older than cutoff date
       if (postDate < cutoffDate) {
         console.log(`Skipping old post from ${pubDate}`);
         continue;
       }
-      
+
+      // Skip posts without required hashtag (if filtering is enabled)
+      if (config.HASHTAG_FILTER.enabled) {
+        const requiredHashtag = `#${config.HASHTAG_FILTER.tag}`;
+        if (!description.includes(requiredHashtag)) {
+          console.log(`Skipping post without ${requiredHashtag} hashtag`);
+          continue;
+        }
+      }
+
       // Generate enhanced title from description using the title generator
       const finalTitle = title || generateTitle(description);
-      
+
       // Add all posts from RSS feed (RSS already filters to original posts only)
       items.push({ title: finalTitle, description, pubDate, link, media });
     }
