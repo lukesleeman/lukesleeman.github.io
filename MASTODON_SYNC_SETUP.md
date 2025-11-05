@@ -28,20 +28,20 @@ To enable hashtag filtering, edit `.github/scripts/config.js`:
 ```javascript
 HASHTAG_FILTER: {
   // Set to true to only sync posts with a specific hashtag
-  enabled: true,  // Change to true to enable filtering
+  ENABLED: true,  // Change to true to enable filtering
   // The hashtag to filter by (without the # symbol)
   // Posts will only be synced if they contain this hashtag
-  tag: 'microblog'  // Change to your preferred hashtag
+  TAG: 'microblog'  // Change to your preferred hashtag
 }
 ```
 
 **Behavior Options:**
-- `enabled: false` - Syncs all posts (default behavior)
-- `enabled: true` - Only syncs posts containing the specified hashtag (e.g., `#microblog`)
+- `ENABLED: false` - Syncs all posts (default behavior)
+- `ENABLED: true` - Only syncs posts containing the specified hashtag (e.g., `#microblog`)
 
 **Example:**
-- If `tag: 'microblog'`, only posts containing `#microblog` will be synced
-- Change `tag` to any hashtag you want (without the `#` symbol)
+- If `TAG: 'microblog'`, only posts containing `#microblog` will be synced
+- Change `TAG` to any hashtag you want (without the `#` symbol)
 - Posts without the hashtag will be skipped and logged
 
 ## What Gets Created
@@ -90,8 +90,8 @@ module.exports = {
 
   // Hashtag filtering settings
   HASHTAG_FILTER: {
-    enabled: false,       // Set to true to enable hashtag filtering
-    tag: 'microblog'      // The hashtag to filter by (without #)
+    ENABLED: false,       // Set to true to enable hashtag filtering
+    TAG: 'microblog'      // The hashtag to filter by (without #)
   }
 };
 ```

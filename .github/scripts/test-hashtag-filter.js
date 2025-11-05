@@ -32,7 +32,7 @@ console.log('=== TESTING HASHTAG FILTERING ===\n');
 // Test 1: With filtering disabled (default)
 console.log('Test 1: Hashtag filtering DISABLED');
 console.log('Expected: All 3 posts should be parsed\n');
-config.HASHTAG_FILTER.enabled = false;
+config.HASHTAG_FILTER.ENABLED = false;
 const itemsWithoutFilter = parseRSS(mockRSSWithHashtag);
 console.log(`Result: Found ${itemsWithoutFilter.length} posts`);
 itemsWithoutFilter.forEach((item, i) => {
@@ -43,8 +43,8 @@ console.log(`✓ ${itemsWithoutFilter.length === 3 ? 'PASSED' : 'FAILED'}\n`);
 // Test 2: With filtering enabled
 console.log('Test 2: Hashtag filtering ENABLED (tag: "microblog")');
 console.log('Expected: Only 2 posts with #microblog should be parsed\n');
-config.HASHTAG_FILTER.enabled = true;
-config.HASHTAG_FILTER.tag = 'microblog';
+config.HASHTAG_FILTER.ENABLED = true;
+config.HASHTAG_FILTER.TAG = 'microblog';
 const itemsWithFilter = parseRSS(mockRSSWithHashtag);
 console.log(`Result: Found ${itemsWithFilter.length} posts`);
 itemsWithFilter.forEach((item, i) => {
@@ -62,14 +62,14 @@ console.log(`✓ ${hasCorrectPosts ? 'PASSED - Correct posts filtered' : 'FAILED
 // Test 4: Different hashtag
 console.log('Test 4: Different hashtag that doesn\'t exist');
 console.log('Expected: 0 posts\n');
-config.HASHTAG_FILTER.enabled = true;
-config.HASHTAG_FILTER.tag = 'nonexistent';
+config.HASHTAG_FILTER.ENABLED = true;
+config.HASHTAG_FILTER.TAG = 'nonexistent';
 const itemsWithDifferentTag = parseRSS(mockRSSWithHashtag);
 console.log(`Result: Found ${itemsWithDifferentTag.length} posts`);
 console.log(`✓ ${itemsWithDifferentTag.length === 0 ? 'PASSED' : 'FAILED'}\n`);
 
 // Reset config
-config.HASHTAG_FILTER.enabled = false;
-config.HASHTAG_FILTER.tag = 'microblog';
+config.HASHTAG_FILTER.ENABLED = false;
+config.HASHTAG_FILTER.TAG = 'microblog';
 
 console.log('=== ALL TESTS COMPLETE ===');

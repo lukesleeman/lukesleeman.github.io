@@ -149,8 +149,8 @@ function parseRSS(xmlString) {
       }
 
       // Skip posts without required hashtag (if filtering is enabled)
-      if (config.HASHTAG_FILTER.enabled) {
-        const requiredHashtag = `#${config.HASHTAG_FILTER.tag}`;
+      if (config.HASHTAG_FILTER.ENABLED) {
+        const requiredHashtag = `#${config.HASHTAG_FILTER.TAG}`;
         if (!description.includes(requiredHashtag)) {
           console.log(`Skipping post without ${requiredHashtag} hashtag`);
           continue;
